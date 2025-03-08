@@ -1,12 +1,29 @@
 <template>
+    <h3>Lennuplaan</h3>
+    <div>
+    <select name="Lähtekoht" v-model="lahteKoht">
+      <option></option>
+      <option v-for="(lahte, index) in alllahteKoht" :key="index" :value="lahte">
+        {{ lahte }}
+      </option>
+    </select>
+
+    <select name="Sihtkoht" v-model="sihtkoht">
+      <option></option>
+      <option v-for="(siht, index) in allsihtKoht" :key="index" :value="siht">
+        {{ siht }}
+      </option>
+    </select>
+
+    <input v-model="hind" type="range" min="0" max="1000" />
+
+    <input v-model="kuupaevAeg" type="date">
+
+  </div>
   <div>
-    <h3>
-      Lennuplaan
-    </h3>
     <ul class="lend">
-      <li v-for="len in flights" key="lennud.id" class="lend">
-        {{len.sihtkoht}},
-        {{len.hind}}
+      <li v-for="len in filterFlights" key="len.id" class="lend">
+        {{ len.lahteKoht }}, {{ len.sihtkoht }}, {{ len.hind }} , {{len.kuupaev}}
       </li>
     </ul>
   </div>
@@ -19,19 +36,41 @@
     components: {Header},
     data() {
       return {
+        lahteKoht: "",
+        sihtkoht: "",
+        hind: "1000",
+        kuupaevAeg: "",
         flights: [],
+        alllahteKoht: [],
+        allsihtKoht: [],
+        filteredFlights: [],
+
+
       };
     },
-    methods: {
-      async getData(){
-        const res = await fetch("http://localhost:8080/lennud/api")
-        const finalRes = await res.json();
-        this.flights = finalRes;
+    computed: {
+      filterFlights: function () {
+        return this.flights.filter(flight => {
+          const lahteKoht = !this.lahteKoht || flight.lahteKoht === this.lahteKoht;
+          const sihtkoht = !this.sihtkoht || flight.sihtkoht === this.sihtkoht;
+          const hind = parseInt(this.hind) > 0 && flight.hind <= parseInt(this.hind);
+          const kuupaevAegMatch = !this.kuupaevAeg || flight.kuupaevAeg.substring(0,10) === this.kuupaevAeg;
+          return lahteKoht && sihtkoht && hind && kuupaevAegMatch
+        })
+      }},
+      methods: {
+        async getData() {
+          const res = await fetch("http://localhost:8080/api/lennud")
+          const finalRes = await res.json();
+          this.flights = finalRes;
+          this.alllahteKoht = [...new Set(finalRes.map(flight => flight.lahteKoht))]
+          this.allsihtKoht = [...new Set(finalRes.map(flight => flight.sihtkoht))]
+
+        },
+      },
+      mounted() {
+        this.getData()
       }
-    },
-    mounted() {
-      this.getData()
-    }
   }
 </script>
 
