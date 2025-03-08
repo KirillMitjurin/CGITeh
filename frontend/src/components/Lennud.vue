@@ -1,12 +1,10 @@
-
-
 <template>
   <div>
     <h3>
       Lennuplaan
     </h3>
-    <ul>
-      <li v-for="len in flights" key="lennud.id">
+    <ul class="lend">
+      <li v-for="len in flights" key="lennud.id" class="lend">
         {{len.sihtkoht}},
         {{len.hind}}
       </li>
@@ -15,7 +13,10 @@
 </template>
 
 <script>
+  import Header from "@/components/Header.vue";
+
   export default {
+    components: {Header},
     data() {
       return {
         flights: [],
@@ -35,5 +36,11 @@
 </script>
 
 <style scoped>
+text{
+  color: black;
+}
+.lend{
+  margin: auto;
 
+}
 </style>
