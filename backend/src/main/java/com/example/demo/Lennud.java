@@ -8,6 +8,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "lennud")
@@ -17,6 +19,7 @@ public class Lennud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
 
     @Column(name = "lahtekoht", nullable = false)
     private String lahteKoht;
@@ -40,6 +43,10 @@ public class Lennud {
     private String lennunumber;
     @Column(name="kestus", nullable = false)
     private Duration kestus;
+
+    @OneToMany(mappedBy = "lennud")
+    private List<Istekohad> istekohad = new ArrayList<>();
+
     public Lennud() {
 
     }

@@ -18,7 +18,7 @@ public class LennudKontroller {
     private LennudRepository lennudRepository;
 
     @GetMapping("/lennud")
-    public List<Lennud> getAllLennud(){
+    public List<Lennud> getAllLennud() {
         return lennudRepository.findAll();
     }
 

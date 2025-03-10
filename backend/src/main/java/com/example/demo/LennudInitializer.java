@@ -1,17 +1,15 @@
 package com.example.demo;
 
-import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Component
-public class DataInitializer implements CommandLineRunner {
+public class LennudInitializer implements CommandLineRunner {
 
     @Autowired
     private LennudRepository lennudRepository;
