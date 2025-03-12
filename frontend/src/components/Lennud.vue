@@ -1,6 +1,6 @@
 <template>
     <h3>Lennuplaan</h3>
-    <div>
+    <div class = "filtrid">
     <select name="Lähtekoht" v-model="lahteKoht">
       <option></option>
       <option v-for="(lahte, index) in alllahteKoht" :key="index" :value="lahte">
@@ -24,14 +24,18 @@
     <ul class="lend">
       <li v-for="len in filterFlights" key="len.id" class="lend">
         {{ len.lahteKoht }}, {{ len.sihtkoht }}, {{ len.hind }} , {{len.kuupaev}}
+        <router-link :to="{name: 'Valik', params: {lennudId: len.id} }">
+          <button >Purchase</button>
+        </router-link>
       </li>
+
     </ul>
+
   </div>
 </template>
 
 <script>
   import Header from "@/components/Header.vue";
-
   export default {
     components: {Header},
     data() {
@@ -44,8 +48,6 @@
         alllahteKoht: [],
         allsihtKoht: [],
         filteredFlights: [],
-
-
       };
     },
     computed: {
@@ -65,7 +67,6 @@
           this.flights = finalRes;
           this.alllahteKoht = [...new Set(finalRes.map(flight => flight.lahteKoht))]
           this.allsihtKoht = [...new Set(finalRes.map(flight => flight.sihtkoht))]
-
         },
       },
       mounted() {
@@ -80,6 +81,9 @@ text{
 }
 .lend{
   margin: auto;
+}
 
+.lend{
+  margin-top: 5%;
 }
 </style>

@@ -6,9 +6,9 @@
   <header class="header">
     <nav>
       <ul>
-        <li><router-link to="/">Avaleht</router-link></li>
-        <li><router-link to="/lennuplaan">Lennuplaan</router-link></li>
-        <li><router-link to="/kontakt">Kontakt</router-link></li>
+        <li>Avaleht</li>
+        <li>Lennuplaan</li>
+        <li>Kontakt</li>
       </ul>
     </nav>
   </header>

@@ -3,11 +3,13 @@ import Lennud from "@/components/Lennud.vue";
 <script setup>
 import Lennud from "@/components/Lennud.vue";
 import Header from "@/components/Header.vue";
+import Valik from "@/components/Valik.vue";
+import InputNumber from 'primevue/inputnumber';
 </script>
 
 <template>
-  <Header class="header"/>
-  <lennud id="lennud"></lennud>
+  <Header></Header>
+  <router-view></router-view>
 </template>
 
 <style>

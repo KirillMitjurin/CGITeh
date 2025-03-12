@@ -18,7 +18,7 @@ public class IstekohadKontroller {
     IstekohadRepository istekohadRepository;
 
     @GetMapping("/istekohad")
-    public List<Istekohad> getAllIstekohad(@RequestParam("lennudId") Long lennudId){
+    public List<Istekohad> getAllIstekohad(@RequestParam("id") Long lennudId){
         return istekohadRepository.findByLennudId(lennudId);
     }
 
