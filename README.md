@@ -24,10 +24,30 @@ Rakendus on kättesaadav aadressil http://localhost:5173.
 
 # Kasutatud tehnoloogiad
 ## Backend
-    Spring Boot (Spring MVC, Spring Data JPA)
-    PostgreSQL (andmebaasihaldus)
-    Maven (ehitamiseks ja sõltuvuste haldamiseks)
+Spring Boot (Spring MVC, Spring Data JPA)
+
+PostgreSQL (andmebaasihaldus)
+
+Maven (ehitamiseks ja sõltuvuste haldamiseks)
 ## Frontend 
-    Vue.js 
-    Vue router
+Vue.js 
+
+Vue router
   
+# Arenduse etapid
+## Frontendi loomine
+Alustasin lihtsa kasutajaliidesega, et kuvada andmeid. Kasutasin Vue.js-i ja Vite-i kiireks arendamiseks.
+## Backendi arendus ja andmebaasi seadistamine
+Esialgu tekkisid probleemid andmebaasi loomisega, kuna Entity klassid olid valesti seadistatud. Kasutasin PostgreSQL-i ja Spring Data JPA-d skeemi automaatseks genereerimiseks. Kui andmebaas töötas, lisasin lennud ja istekohtade konfiguratsiooni, luues täiendava tabeli.
+
+## Filtrite rakendamine
+Lennufiltrid realiseerisin frontendis, et näidata oma oskusi Vue.js-is. Kasutasin JavaScripti ja Vue.js-i komponente, et hallata filtrite loogikat.
+
+## Soovitamise algoritmi loomine
+Esialgu proovisin realiseerida seda SQL-päringu kaudu, kuid see osutus keeruliseks. Lõplik lahendus valmis Java kontrolleris, kasutades äriloogikat Java tasemel.
+
+## Viimistlus ja UI kujundus
+Vormistasin kõik elemendid kasutades CSS, HTML, JS
+
+# Kokkuvõte
+Selle ülesande lahendamiseks kulus mul kokku umbes 20 tundi. Kuna mul ei ole väga palju kogemusi veebiarenduses, siis mõned ülesanded olid minu jaoks uued ning pidin palju uurima ja õppima. See protsess andis mulle väärtuslikke kogemusi nii backendis (Spring Boot, PostgreSQL) kui ka frontendis (Vue.js).
