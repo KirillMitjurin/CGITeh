@@ -2,7 +2,7 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 
-// Loodab andmebaasis tabel istekohadega.
+// Loob andmebaasis tabel istekohadega.
 @Entity
 @Table(name="istekohad")
 public class Istekohad {
