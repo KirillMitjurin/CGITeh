@@ -50,4 +50,4 @@ Esialgu proovisin realiseerida seda SQL-päringu kaudu, kuid see osutus keerulis
 Vormistasin kõik elemendid kasutades CSS, HTML, JS
 
 # Kokkuvõte
-Selle ülesande lahendamiseks kulus mul kokku umbes 20 tundi. Kuna mul ei ole väga palju kogemusi veebiarenduses, siis mõned ülesanded olid minu jaoks uued ning pidin palju uurima ja õppima. See protsess andis mulle väärtuslikke kogemusi nii backendis (Spring Boot, PostgreSQL) kui ka frontendis (Vue.js).
+Selle ülesande lahendamiseks kulus mul kokku umbes 20 -30 tundi. Kuna mul ei ole väga palju kogemusi veebiarenduses, siis mõned ülesanded olid minu jaoks uued ning pidin palju uurima ja õppima. See protsess andis mulle väärtuslikke kogemusi nii backendis (Spring Boot, PostgreSQL) kui ka frontendis (Vue.js).
