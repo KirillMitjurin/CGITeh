@@ -2,34 +2,40 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 
+// Loodab andmebaasis tabel istekohadega.
 @Entity
 @Table(name="istekohad")
 public class Istekohad {
 
-
+// igal kohal on
+    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    //rida
     @Column(name="row_number", nullable = false)
     private int rowNumber;
-
+    // koht või veerg
     @Column(name="column_number", nullable = false)
     private int columnNumber;
 
+    // kas koht on hõivatud
     @Column(name="seat_occupied", nullable = false)
     private boolean seatOccupied;
 
 
-    // veerg, mis näitab kas istekoht on akna all
+    //  kas istekoht on akna all
     @Column(name="under_window", nullable = false)
     private boolean underWindow;
 
 
-    // veerg, mis näitab kas istekohal on rohkem jalaruumi
+    // kas istekohal on rohkem jalaruumi
     @Column(name="leg_space", nullable = false)
     private boolean legSpace;
 
+
+    // kas see istekoht on lähedal väljapääsule
     @Column(name="close_to_exit", nullable = false)
     private boolean closeToExit;
     @ManyToOne
@@ -39,6 +45,7 @@ public class Istekohad {
     public Istekohad() {
     }
 
+    // konstruktor
 
     public Istekohad(int rowNumber, int columnNumber, boolean seatOccupied, boolean underWindow, boolean legSpace, boolean closeToExit, Lennud lennud) {
         this.rowNumber = rowNumber;
@@ -49,6 +56,9 @@ public class Istekohad {
         this.closeToExit = closeToExit;
         this.lennud = lennud;
     }
+
+
+    // getters ja setters
 
     public long getId() {
         return id;

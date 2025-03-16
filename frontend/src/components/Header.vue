@@ -6,9 +6,9 @@
   <header class="header">
     <nav>
       <ul>
-        <li>Avaleht</li>
-        <li>Lennuplaan</li>
-        <li>Kontakt</li>
+        <li>
+          <router-link :to="{ name: 'Lennud' }">Lennuplaan</router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -23,9 +23,14 @@ export default {
 
 <style scoped>
 .header {
-  background-color: #007bff;
+  background-color: #ffffff;
   padding: 15px;
-  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+text{
+  color: black;
 }
 
 nav ul {
@@ -35,7 +40,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 </style>

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+// Endpoint mis tagastab kõik lennud.
 @RestController
 @RequestMapping("/api")
 public class LennudKontroller {

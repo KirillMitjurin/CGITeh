@@ -7,12 +7,10 @@ import Valik from "@/components/Valik.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes:[
-        {path: '/', component: Lennud},
+        {path: '/Lennud', name: "Lennud", component: Lennud},
         {path: '/Valik/:lennudId', name: 'Valik',component: Valik}
-
     ]
 })
-
 const app = createApp(App)
 app.use(router)
 
